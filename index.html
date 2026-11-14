@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Converter Tool BY Nawab Zada Hacker</title>
+  <link rel="stylesheet" href="_sys_8x4q/_c9f2a1.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-badge">PRO TOOL</span>
+        <h1>Converter</h1>
+      </div>
+      <p class="dev-credit">Developer <span>Nawab Zada Hacker</span></p>
+    </header>
+
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-target="tab-video">Video to MP3</button>
+      <button class="tab-btn" data-target="tab-voice">Text Voice Changer</button>
+    </nav>
+
+    <main class="main-content">
+      <section id="tab-video" class="panel active">
+        <div class="panel-header">
+          <h2>Video to Audio Converter</h2>
+          <p>Max 5 minute tk ki video ko high-quality MP3 audio mein convert kr skty huo</p>
+        </div>
+
+        <label for="video-input" class="upload-box" id="drop-zone">
+          <input type="file" id="video-input" accept="video/*" hidden />
+          <div class="upload-icon">🎬</div>
+          <p class="upload-title" id="file-label">Click Or Drop Video</p>
+          <span class="upload-hint">MP4, WebM, MOV(Limit: 5 Minutes)</span>
+        </label>
+
+        <div id="video-meta" class="meta-bar hidden">
+          <span id="meta-name">video.mp4</span>
+          <span id="meta-duration">00:00</span>
+        </div>
+
+        <button id="convert-btn" class="primary-btn" disabled>Convert to MP3</button>
+
+        <div id="progress-wrap" class="progress-wrap hidden">
+          <div class="progress-info">
+            <span id="progress-status">Processing audio...</span>
+            <span id="progress-percent">0%</span>
+          </div>
+          <div class="progress-track">
+            <div id="progress-bar" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div id="result-box" class="result-box hidden">
+          <h3>Audio Ready</h3>
+          <audio id="audio-preview" controls></audio>
+          <div class="action-grid">
+            <a id="download-btn" class="action-btn download" download="converted-audio.mp3">Download MP3</a>
+            <button id="share-btn" class="action-btn share">Share</button>
+          </div>
+        </div>
+
+        <p id="video-error" class="error-msg hidden"></p>
+      </section>
+
+      <section id="tab-voice" class="panel">
+        <div class="panel-header">
+          <h2>Text to Voice Changer</h2>
+          <p>Enter text</p>
+        </div>
+
+        <div class="voice-controls-top">
+          <label for="voice-select">System Voice:</label>
+          <select id="voice-select"></select>
+        </div>
+
+        <textarea id="tts-input" rows="4" placeholder="Yahan apna text likhein... (English / Urdu / Hindi)"></textarea>
+
+        <div class="voice-status hidden" id="voice-status">
+          <span class="pulse-dot"></span>
+          <span id="speaking-label">Speaking...</span>
+        </div>
+
+        <p class="preset-title">Voice Changer Modes</p>
+        <div class="changer-grid">
+          <button class="vc-btn" data-pitch="1.0" data-rate="1.0" data-mode="Normal">🎙️ Normal</button>
+          <button class="vc-btn" data-pitch="1.8" data-rate="1.15" data-mode="Chipmunk">🐿️ Chipmunk</button>
+          <button class="vc-btn" data-pitch="0.35" data-rate="0.8" data-mode="Monster">👹 Monster / Deep</button>
+          <button class="vc-btn" data-pitch="1.45" data-rate="1.05" data-mode="Sweet Girl">👩 High / Girl</button>
+          <button class="vc-btn" data-pitch="0.8" data-rate="1.55" data-mode="Fast Robot">🤖 Fast Robot</button>
+          <button class="vc-btn" data-pitch="0.55" data-rate="0.65" data-mode="Ghost">👻 Slow / Ghost</button>
+        </div>
+
+        <button id="stop-voice-btn" class="secondary-btn">Stop Voice</button>
+        <p id="voice-error" class="error-msg hidden"></p>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; <span id="year"></span> Converter &bull; Tool By Nawab Zada Hacker</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js"></script>
+  <script src="_sys_8x4q/_m4k7p3.js"></script>
+</body>
+</html>
